@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layouttexto"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pantallatexto"
+        tools:ignore="NotSibling">
+
+
+
+
+        <TextView
+            android:id="@+id/textocalc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Calculadora"
+            android:textStyle="bold"
+            android:textSize="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="cursive"
+            android:textColor="@android:color/black"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/pantalla"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/linearlayout1"
+        android:background="@drawable/backgrounds_combinados">
+
+
+
+        <TextView
+            android:id="@+id/pantallatexto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1"/>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_2"/>
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_3"/>
+        <Button
+            android:id="@+id/buttonsumar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="@string/sumar"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/linearlayout1"
+        app:layout_constraintEnd_toEndOf="@id/linearlayout1"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout1"
+        >
+
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_4"/>
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_5"/>
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_6"/>
+        <Button
+            android:id="@+id/buttonrestar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="@string/restar"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/linearlayout2"
+        app:layout_constraintEnd_toEndOf="@id/linearlayout2"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout2"
+        >
+
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_7"/>
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_8"/>
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_9"/>
+        <Button
+            android:id="@+id/buttondividir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="@string/dividor"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/linearlayout3"
+        app:layout_constraintEnd_toEndOf="@id/linearlayout3"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout3"
+        >
+        <Button
+            android:id="@+id/buttonreset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ce"
+            android:backgroundTint="@android:color/holo_red_dark"/>
+        <Button
+            android:id="@+id/button0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"/>
+        <Button
+            android:id="@+id/buttonresult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/igual"
+            android:backgroundTint="@android:color/holo_green_dark"/>
+        <Button
+            android:id="@+id/buttonmult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="@string/multiplicar"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/linearlayout4"
+        app:layout_constraintEnd_toEndOf="@id/linearlayout4"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout4"
+        android:layout_marginTop="100dp"
+        >
+        <Button
+            android:id="@+id/exitbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salir"
+            android:backgroundTint="@android:color/holo_red_dark"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
