@@ -1,15 +1,26 @@
 package com.acasloa946.Calc
 
+/**
+ * @author Álvaro Castilla
+ */
+
+/**
+ * Clase para el manejo del cálculo
+ */
 class Calculo {
+    //variables de numeros, resultado y operador.
 
     var num1 = 0.0
     var num2 = 0.0
     var result = 0.0
-    var operacion = ""
+    var operador = ""
+
+    //variable para almacenar la última operación ejecutada.
     lateinit var historial : String
 
+    //función que ejecuta diferentes funciones de operaciones dependiendo del operador pulsado
     fun toDoOp():Double {
-        when (operacion) {
+        when (operador) {
             "+" -> this.result = sumar()
             "-" -> this.result = restar()
             "*" -> this.result = multiplicar()
@@ -30,8 +41,10 @@ class Calculo {
     fun dividir():Double {
         return num1 / num2
     }
+
+    //función para guardar última operación en un string.
     fun setNumClicked():String {
-        historial = "${num1} ${operacion} ${num2} = ${(toDoOp())}"
+        historial = "${num1} ${operador} ${num2} = ${(toDoOp())}"
         return historial
     }
 

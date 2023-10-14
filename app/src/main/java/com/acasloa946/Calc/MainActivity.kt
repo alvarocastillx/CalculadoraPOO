@@ -18,23 +18,23 @@ import kotlin.system.exitProcess
   */
 class MainActivity : AppCompatActivity() {
     // Declaración de variables:
-    lateinit var listaNumeros : MutableList<Button>
-    lateinit var listaOps : MutableList<Button>
-    lateinit var btnCalc : Button
-    lateinit var btnCE : Button
-    lateinit var buttonC : Button
-    lateinit var calc : Calculo
-    lateinit var btn_salir : Button
-    lateinit var textopantalla : TextView
-    lateinit var pantallahistorial : TextView
+    private lateinit var listaNumeros : MutableList<Button>
+    private lateinit var listaOps : MutableList<Button>
+    private lateinit var btnCalc : Button
+    private lateinit var btnCE : Button
+    private lateinit var buttonC : Button
+    private lateinit var calc : Calculo
+    private lateinit var btn_salir : Button
+    private lateinit var textopantalla : TextView
+    private lateinit var pantallahistorial : TextView
 
-    lateinit var pantallaactual : String
+    private lateinit var pantallaactual : String
 
     // variables para controlar el estado de la calculadora.
 
-    var numero1introducido : Boolean = false
-    var numero2introducido : Boolean = false
-    var reset : Boolean = false
+    private var numero1introducido : Boolean = false
+    private var numero2introducido : Boolean = false
+    private var reset : Boolean = false
 
 
 
@@ -57,12 +57,12 @@ class MainActivity : AppCompatActivity() {
         pantallaactual = ""
 
         // inicializa elementos de la interfaz
-        pantallahistorial = findViewById<TextView>(R.id.textohistorial)
+        pantallahistorial = findViewById(R.id.textohistorial)
         textopantalla = findViewById<Button>(R.id.pantallatexto)
-        btnCalc = findViewById<Button>(R.id.buttonresult)
-        btnCE = findViewById<Button>(R.id.buttonreset)
-        buttonC = findViewById<Button>(R.id.buttonC)
-        btn_salir = findViewById<Button>(R.id.exitbtn)
+        btnCalc = findViewById(R.id.buttonresult)
+        btnCE = findViewById(R.id.buttonreset)
+        buttonC = findViewById(R.id.buttonC)
+        btn_salir = findViewById(R.id.exitbtn)
 
 
         //crea un setOnClickListener de cada botón que enlaza a la función botonClickado()
@@ -83,33 +83,33 @@ class MainActivity : AppCompatActivity() {
     }
 
      //función que ejecuta cada botón de cada numero
-    fun crearNumeros() {
+     private fun crearNumeros() {
          //lista de todos los botones juntos
-        listaNumeros = mutableListOf<Button>()
+        listaNumeros = mutableListOf()
          //se agrega cada botón a la lista
-        listaNumeros.add(findViewById<Button>(R.id.button0))
-        listaNumeros.add(findViewById<Button>(R.id.button1))
-        listaNumeros.add(findViewById<Button>(R.id.button2))
-        listaNumeros.add(findViewById<Button>(R.id.button3))
-        listaNumeros.add(findViewById<Button>(R.id.button4))
-        listaNumeros.add(findViewById<Button>(R.id.button5))
-        listaNumeros.add(findViewById<Button>(R.id.button6))
-        listaNumeros.add(findViewById<Button>(R.id.button7))
-        listaNumeros.add(findViewById<Button>(R.id.button8))
-        listaNumeros.add(findViewById<Button>(R.id.button9))
+        listaNumeros.add(findViewById(R.id.button0))
+        listaNumeros.add(findViewById(R.id.button1))
+        listaNumeros.add(findViewById(R.id.button2))
+        listaNumeros.add(findViewById(R.id.button3))
+        listaNumeros.add(findViewById(R.id.button4))
+        listaNumeros.add(findViewById(R.id.button5))
+        listaNumeros.add(findViewById(R.id.button6))
+        listaNumeros.add(findViewById(R.id.button7))
+        listaNumeros.add(findViewById(R.id.button8))
+        listaNumeros.add(findViewById(R.id.button9))
     }
      //función que ejecuta cada botón de cada operador
-    fun crearOperadores() {
+     private fun crearOperadores() {
          //lista de todos los botones juntos
-        listaOps= mutableListOf<Button>()
+        listaOps= mutableListOf()
          //se agrega cada botón a la lista
-        listaOps.add(findViewById<Button>(R.id.buttonsumar))
-        listaOps.add(findViewById<Button>(R.id.buttonrestar))
-        listaOps.add(findViewById<Button>(R.id.buttonmult))
-        listaOps.add(findViewById<Button>(R.id.buttondividir))
+        listaOps.add(findViewById(R.id.buttonsumar))
+        listaOps.add(findViewById(R.id.buttonrestar))
+        listaOps.add(findViewById(R.id.buttonmult))
+        listaOps.add(findViewById(R.id.buttondividir))
     }
      //función que ejecuta cada número clickado
-    fun botonClikado(num:Int) {
+     private fun botonClikado(num:Int) {
         // significa que la operación anterior ya se ha realizado y se inicia una nueva operación.
         if (numero1introducido && numero2introducido) {
             pantallaactual = ""
@@ -119,18 +119,18 @@ class MainActivity : AppCompatActivity() {
         } //se agrega a la pantalla el botón clickado
         else {
             pantallaactual += num
-            textopantalla.setText(pantallaactual)
+            textopantalla.text = pantallaactual
         }
 
     }
 
      //función que se ejecuta cuando se clicka un operador
-     fun botonOperador(operator:String){
+     private fun botonOperador(operator:String){
          // significa que la operación anterior ya se ha realizado y se inicia una operación con el resultado.
         if (numero1introducido && numero2introducido) {
             calc.num1 = calc.result
             calc.num2 = 0.0
-            calc.operacion = operator
+            calc.operador = operator
             numero2introducido = false
             pantallaactual = ""
             textopantalla.setText(pantallaactual)
@@ -142,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                 calc.num1 = pantallaactual.toDouble()
 
             }
-            calc.operacion = operator
+            calc.operador = operator
             numero1introducido = true
             pantallaactual = ""
             textopantalla.setText(pantallaactual)
@@ -151,12 +151,12 @@ class MainActivity : AppCompatActivity() {
     }
 
      //función que se ejecuta cuando se clicka el botón CE
-    fun btnCE(){
+     private fun btnCE(){
 
         calc.num1 = 0.0
         calc.num2 = 0.0
         calc.result = 0.0
-        calc.operacion = ""
+        calc.operador = ""
         if (reset) {
             textopantalla.setText(pantallaactual)
             reset = false
@@ -173,14 +173,14 @@ class MainActivity : AppCompatActivity() {
 
     }
      //función que se ejecuta cuando se clicka el botón de calcular.
-    fun btnCalc(){
+     private fun btnCalc(){
 
         if (pantallaactual != "" && numero1introducido) {
             calc.num2 = pantallaactual.toDouble()
             numero2introducido = true
         }
          // genera el mensaje toast si no estan guardados los 2 números.
-        if (numero1introducido == false || numero2introducido == false ) {
+        if (!numero1introducido || !numero2introducido) {
             Toast.makeText(this, "Introduzca 2 números y una operación para continuar", Toast.LENGTH_LONG).show()
         }
         //accede a la función de hacer operación de la clase Calculo()
