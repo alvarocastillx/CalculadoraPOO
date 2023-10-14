@@ -55,6 +55,28 @@
             android:textColor="@android:color/black"
             />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/pantallahistorial"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pantalla"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backgrounds_combinados">
+
+
+
+        <TextView
+            android:id="@+id/textohistorial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            />
+    </LinearLayout>
 
 
     <LinearLayout
@@ -169,10 +191,10 @@
         app:layout_constraintTop_toBottomOf="@id/linearlayout3"
         >
         <Button
-            android:id="@+id/buttonreset"
+            android:id="@+id/buttonC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ce"
+            android:text="@string/c"
             android:backgroundTint="@android:color/holo_red_dark"/>
         <Button
             android:id="@+id/button0"
@@ -194,6 +216,22 @@
 
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/linearlayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/linearlayout4"
+        app:layout_constraintEnd_toEndOf="@id/linearlayout4"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout4"
+        >
+        <Button
+            android:id="@+id/buttonreset"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="@string/ce"/>
+
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/linearlayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -208,6 +246,7 @@
             android:layout_height="wrap_content"
             android:text="@string/salir"
             android:backgroundTint="@android:color/holo_red_dark"/>
+        
 
 
     </LinearLayout>

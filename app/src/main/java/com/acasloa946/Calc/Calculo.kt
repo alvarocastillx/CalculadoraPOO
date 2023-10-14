@@ -6,6 +6,7 @@ class Calculo {
     var num2 = 0.0
     var result = 0.0
     var operacion = ""
+    lateinit var historial : String
 
     fun toDoOp():Double {
         when (operacion) {
@@ -28,6 +29,10 @@ class Calculo {
     }
     fun dividir():Double {
         return num1 / num2
+    }
+    fun setNumClicked():String {
+        historial = "${num1} ${operacion} ${num2} = ${(toDoOp())}"
+        return historial
     }
 
 
